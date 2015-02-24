@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'tada-list',
+			'database'  => 'tada_list',
 			'username'  => 'workstead',
 			'password'  => 'secret',
 			'charset'   => 'utf8',
