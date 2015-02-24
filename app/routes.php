@@ -3,17 +3,20 @@
 Route::get('/', ['as' => 'home', 'uses' => 'TasksController@index']);
 Route::get('tasks/{id}', 'TasksController@show')->where('id', '\d+');
 
-Route::get('{username}/tasks', function ($username)
-{
-    $user = User::whereUsername($username)->first();
+Route::get('{username}/tasks', 'UserTasksController@index');
+Route::get('{username}/tasks/{id}', ['as' => 'user.tasks.show', 'uses' => 'UserTasksController@index']);
 
-    return $user->tasks;
-});
+// Route::get('{username}/tasks', function ($username)
+// {
+//     $user = User::whereUsername($username)->first();
 
-Route::get('{username}/tasks/{id}', function ($username, $id)
-{
-    $user = User::with('tasks')->whereUsername($username)->first();
-    $task = $user->tasks;
+//     return $user->tasks;
+// });
 
-    return View::make('tasks.show', compact('task'));
-});
+// Route::get('{username}/tasks/{id}', function ($username, $id)
+// {
+//     $user = User::with('tasks')->whereUsername($username)->first();
+//     $task = $user->tasks;
+
+//     return View::make('tasks.show', compact('task'));
+// });
