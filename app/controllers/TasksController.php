@@ -4,7 +4,7 @@ class TasksController extends BaseController
 {
     public function index()
     {
-        $tasks = Task::all();
+        $tasks = Task::with('user')->get();
 
         return View::make('tasks.index', compact('tasks'));
     }
