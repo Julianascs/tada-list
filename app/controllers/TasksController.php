@@ -19,13 +19,11 @@ class TasksController extends BaseController
 
     public function store()
     {
-        $input = Input::all();
+        $task = new Task(Input::all());
 
-        Task::create([
-            'title'   => $input['title'],
-            'body'    => $input['body'],
-            'user_id' => $input['assign'],
-        ]);
+        if ( ! $task->save()) {
+            return Redirect::back()->withInput()->withErrors($task->getErrors());
+        }
 
         return Redirect::home();
     }

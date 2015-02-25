@@ -2,12 +2,14 @@
 
 <div>
     <label for="title">Title:</label>
-    <input type="text" name="title" id="title">
+    <input type="text" name="title" id="title" value="{{ Input::old('title') }}">
+    {{ $errors->first('title', '<span>:message</span>') }}
 </div>
 
 <div>
     <label for="body">Body:</label>
-    <textarea name="body" id="body" cols="40" rows="6"></textarea>
+    <textarea name="body" id="body" cols="40" rows="6">{{ Input::old('body') }}</textarea>
+    {{ $errors->first('body') }}
 </div>
 
 <div>

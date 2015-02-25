@@ -1,7 +1,13 @@
 <?php
 
-class Task extends Eloquent
+class Task extends BaseModel
 {
+    protected static $rules = [
+        'title' => 'required',
+        'body' => 'required',
+        'user_id' => 'required',
+    ];
+
     protected $fillable = ['title', 'body', 'user_id'];
 
     public function user()
