@@ -5,8 +5,9 @@
 
     @foreach ($tasks as $task)
     <li>
-        {{ gravatar_tag($task->user->email) }}
-        {{ link_to_route('user.tasks.show', $task->title, [$task->user->username, $task->id]) }}
+        <a href="/{{ $task->user->username }}/tasks">{{ gravatar_tag($task->user->email) }}</a>
+
+        {{ link_to_task($task) }}
     </li>
     @endforeach
 
