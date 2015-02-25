@@ -6,8 +6,16 @@
     @foreach ($tasks as $task)
     <li>
         <a href="/{{ $task->user->username }}/tasks">{{ gravatar_tag($task->user->email) }}</a>
-
         {{ link_to_task($task) }}
+
+        {{ Form::model($task, [
+            'class'  => 'task-update-form',
+            'method' => 'PATCH',
+            'route'  => ['tasks.update', $task->id]
+        ]) }}
+        {{ Form::checkbox('completed') }}
+        {{ Form::submit('Update') }}
+        {{ Form::close() }}
     </li>
     @endforeach
 
