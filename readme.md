@@ -17,7 +17,7 @@ o comando `artisan migrate`.
 
     php artisan migrate --seed
 
-Obs.: Caso escolha não utilizar o ambiente Workstead, será necessário
+**Obs.:** Caso escolha não utilizar o ambiente Workstead, será necessário
 editar os parametros de conexão no arquivo `app/config/database.php`
 
 ## Configurar o Workstead (não obrigatório)
@@ -54,6 +54,7 @@ Modifique o arquivo `hosts` incluindo o novo endereço local
 
     192.168.33.10    tada-list.app
 
-Windows: C:\Windows\System32\drivers\etc\hosts
-Linux .: /etc/hosts
+**Windows:** C:\Windows\System32\drivers\etc\hosts
+
+**Linux .:** /etc/hosts
 
