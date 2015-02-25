@@ -13,8 +13,8 @@
 </div>
 
 <div>
-    <label for="assign">Assign To:</label>
-    <select name="assign" id="assign">
+    <label for="user_id">Assign To:</label>
+    <select name="user_id" id="user_id">
         @foreach ($users as $key => $value)
         <option value="{{ $key }}">{{ $value }}</option>
         @endforeach
